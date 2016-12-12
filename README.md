@@ -4,7 +4,7 @@ Tipper is a tip calculator application for iOS.
 
 Submitted by: Daniel Ku
 
-Time spent: 1 hours spent in total
+Time spent: 1.5 hours spent in total for the app
             2 hours spent trying to implement a different feature but ended up not being possible due to Swift3 change prohibiting a certain framework.
 
 ## User Stories

@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Save in NSData so user has values still in the textfields
         if let type = defaults.string(forKey: "tipSelectorType"){
             tipSelectorType = type
         }
@@ -41,9 +42,11 @@ class ViewController: UIViewController {
             billAmountTextField.text = billAmount
         }
         
+        //Keyboard dismiss functionality
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        //Button styling
         calcButton.layer.borderWidth = 0
         calcButton.layer.masksToBounds = false
         calcButton.layer.cornerRadius = calcButton.frame.height/6
@@ -76,6 +79,7 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
+    //Tip calculating button that contains all the math and functionality of the app
     @IBAction func calculateTip(_ sender: AnyObject) {
         guard let billAmount = Double(billAmountTextField.text!) else{
             let alertController = UIAlertController(title: "You didn't enter a bill amount!", message: "", preferredStyle: .alert)
@@ -124,6 +128,7 @@ class ViewController: UIViewController {
             }
         }
     
+        //Math for tip calculations
         let roundedBillAmount = round(billAmount * 100) / 100
         let tipAmount = roundedBillAmount * tipPercent
         let roundedTipAmount = round(tipAmount * 100) / 100

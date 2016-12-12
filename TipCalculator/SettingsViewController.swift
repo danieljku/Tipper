@@ -63,22 +63,25 @@ class SettingsViewController: UIViewController {
         view.endEditing(true)
     }
     
-
+    //Settings save button that changes everything the user desires
     @IBAction func saveSettings(_ sender: AnyObject) {
         splitDefaultValue = splitDefault.text!
         
+        //User chooses between the default tip or the custom tip
         if tipType.selectedSegmentIndex == 0{
             tipSelectorType = "Default"
         }else{
             tipSelectorType = "Custom"
         }
         
+        //User chooses to whether round the total amount or not
         if roundTotalAmount.selectedSegmentIndex == 0{
             roundTotalFlag = true
         }else{
             roundTotalFlag = false
         }
         
+        //Store information in the NSData to pull later to hold onto user's data
         let defaults = UserDefaults.standard
         defaults.set(tipSelectorType, forKey: "tipSelectorType")
         defaults.set(splitDefaultValue, forKey: "splitDefaultValue")
