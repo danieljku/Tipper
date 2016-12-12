@@ -24,10 +24,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipType1StackView: UIStackView!
     @IBOutlet weak var tipType2StackView: UIStackView!
     @IBOutlet weak var tipperNavItem: UINavigationItem!
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let type = defaults.string(forKey: "tipSelectorType"){
+            tipSelectorType = type
+        }
+        if let split = defaults.string(forKey: "splitDefaultValue"){
+            splitDefaultValue = split
+        }
+        roundTotalFlag = defaults.bool(forKey: "roundTotalFlag")
+        
+        if let billAmount = defaults.string(forKey: "billAmount"){
+            billAmountTextField.text = billAmount
+        }
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -47,6 +60,9 @@ class ViewController: UIViewController {
         else{
             tipType2StackView.isHidden = false
             tipType1StackView.isHidden = true
+            if let customTip = defaults.string(forKey: "customTip"){
+                customTipField.text = customTip
+            }
         }
 
     }
@@ -92,6 +108,9 @@ class ViewController: UIViewController {
                 return
             }
             tipPercent = customTip/100
+            
+            defaults.set(customTip, forKey: "customTip")
+            defaults.synchronize()
         }else{
             switch tipSelector.selectedSegmentIndex{
             case 0:
@@ -120,6 +139,9 @@ class ViewController: UIViewController {
         if(!billAmountTextField.isEditing){
             billAmountTextField.text = String(format: "%.2f", roundedBillAmount)
         }
+        
+        defaults.set(roundedBillAmount, forKey: "billAmount")
+        defaults.synchronize()
         
         perPersonLabel.text = String(format: "$%.2f", splitAmount)
         tipAmountLabel.text = String(format: "$%.2f", roundedTipAmount)

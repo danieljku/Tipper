@@ -223,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEa-kH-8DL" userLabel="Tip% Type Stack View">
-                                <rect key="frame" x="50" y="81" width="275" height="28"/>
+                                <rect key="frame" x="50" y="125" width="275" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip% Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl0-yK-luu">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="28"/>
@@ -244,7 +244,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezp-6n-nlK" userLabel="Split Count Stack View">
-                                <rect key="frame" x="50" y="129" width="275" height="30"/>
+                                <rect key="frame" x="50" y="173" width="275" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Default:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sD-L8-DdC">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
@@ -264,13 +264,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interface Settings:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zh-mh-BYQ">
-                                <rect key="frame" x="50" y="50" width="275" height="16"/>
+                                <rect key="frame" x="50" y="94" width="275" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.24313725490196078" green="0.52941176470588236" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df3-Zj-OTN">
-                                <rect key="frame" x="50" y="274" width="275" height="30"/>
+                                <rect key="frame" x="50" y="318" width="275" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save Settings">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -281,7 +281,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQv-OL-kWT">
-                                <rect key="frame" x="50" y="179" width="275" height="28"/>
+                                <rect key="frame" x="50" y="223" width="275" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-cO-Evk">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="28"/>
@@ -322,7 +322,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Cai-WG-fhc">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="fyp-Pn-Xvm"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ccH-r2-lAP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="cfi-ZX-3Nd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="roundTotalAmount" destination="yNF-Gm-lsT" id="Zo7-p3-gPa"/>
@@ -360,6 +365,6 @@
         <image name="Settings-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6nl-JZ-1U2"/>
+        <segue reference="vle-Ub-K9j"/>
     </inferredMetricsTieBreakers>
 </document>

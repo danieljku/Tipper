@@ -16,6 +16,17 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        if let type = defaults.string(forKey: "tipSelectorType"){
+            tipSelectorType = type
+        }
+        if let split = defaults.string(forKey: "splitDefaultValue"){
+            splitDefaultValue = split
+        }
+        roundTotalFlag = defaults.bool(forKey: "roundTotalFlag")
+        
+        
         saveSettingsButton.layer.borderWidth = 0
         saveSettingsButton.layer.masksToBounds = false
         saveSettingsButton.layer.cornerRadius = saveSettingsButton.frame.height/6
@@ -67,6 +78,12 @@ class SettingsViewController: UIViewController {
         }else{
             roundTotalFlag = false
         }
+        
+        let defaults = UserDefaults.standard
+        defaults.set(tipSelectorType, forKey: "tipSelectorType")
+        defaults.set(splitDefaultValue, forKey: "splitDefaultValue")
+        defaults.set(roundTotalFlag, forKey: "roundTotalFlag")
+        defaults.synchronize()
         
         self.view.endEditing(true)
 
