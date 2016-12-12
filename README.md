@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-[Tipper Video Walkthrough](Tipper/Tipper.gif)
+[Tipper Video Walkthrough](https://cloud.githubusercontent.com/assets/15112554/21096081/314c7c40-c013-11e6-88af-678e799fd61c.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
